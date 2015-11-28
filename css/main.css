@@ -85,6 +85,7 @@ main {
   background: #fafafa;
   font-family: 'Roboto', sans-serif;
   font-weight: 400; font-size: 16px;
+  cursor: default;
 }
 .edit-block {
   height: 100%; width: 80px;
