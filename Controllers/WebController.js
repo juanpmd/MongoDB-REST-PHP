@@ -29,6 +29,7 @@ app.controller("WebAppController", ['$scope', '$http',
       }).success(function(data) {
         $("#note-edit-page").fadeOut(200).addClass("hidden");
         $scope.getData();
+        $scope.mainname = "";
     	}).error(function(data) {
     		console.log('Error: ' + data);
     	});

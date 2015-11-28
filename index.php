@@ -16,6 +16,26 @@
     </header>
     <!-- ########################## -->
     <main>
+      <div id="values-name">
+        <div class="name-table">
+          <p>Name</p>
+        </div>
+        <div class="lastname-table">
+          <p>Last Name</p>
+        </div>
+        <div class="email-table">
+          <p>Email</p>
+        </div>
+        <div class="age-table">
+          <p>Age</p>
+        </div>
+        <div class="student-table">
+          <p>Student</p>
+        </div>
+        <div class="edit-block">
+          <p>Edit</p>
+        </div>
+      </div>
       <div class="note" ng-repeat="data in results">
         <!--<p>{{data._id["$oid"]}}</p>-->
         <div class="name-table">
