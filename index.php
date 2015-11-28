@@ -55,8 +55,8 @@
         </div>
 
         <div class="edit-block">
-          <img class="edit-image-block" src="img/Edit.svg"/>
-          <img class="edit-image-block" src="img/Delete.svg"/>
+          <img class="edit-image-block" ng-click="Update_Value(data)" src="img/Edit.svg"/>
+          <img class="edit-image-block" ng-click="Delete_Value(data)" src="img/Delete.svg"/>
         </div>
 
       </div>
@@ -78,8 +78,13 @@
 
         </div>
         <div id="bottom-edit-block">
-          <div id="cancel-edit-button">Cancel</div>
+          <div ng-click="Cancel_Edit_Data()" id="cancel-edit-button">Cancel</div>
           <div ng-click="Finish_Add_Data()" id="done-edit-button">Done</div>
+        </div>
+
+        <div id="bottom-update-block" class="hidden">
+          <div ng-click="Cancel_Update_Data()" id="cancel-update-button">Cancel</div>
+          <div ng-click="Finish_Update_Data()" id="done-update-button">Update</div>
         </div>
 
       </div>

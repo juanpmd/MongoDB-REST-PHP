@@ -39,11 +39,31 @@ class WebAPI extends REST {
 		}
 		$db = new DB();
     $data = json_decode(file_get_contents('php://input'),true);
-    //$valores = array('$set'=>array("name"=>$data["name"], "lastname"=>$data["lastname"], "email"=>$data["email"], "age"=>$data["age"], "student"=>$data["student"]));
-    //$valores = array('$set'=>array("name"=>"Daniela", "lastname"=>"Gonzalez", "email"=>"danigonz@gmail.com", "age"=>24, "student"=>"true"));
-
 		$db->insertData2("datos", $data["name"], $data["lastname"], $data["email"], $data["age"], $data["student"]);
     $this->response('',200);
+  }
+  //-------------------------->>>
+  private function DeleteFile() {
+    if ($this->get_request_method () != "POST") {
+			$this->response ( '', 406 );
+		}
+		$db = new DB();
+    $data = json_decode(file_get_contents('php://input'),true);
+		$db->Delete_Data("datos", $data["id"]);
+    $this->response('',200);
+  }
+  //-------------------------->>>
+  private function UpdateFile() {
+    if ($this->get_request_method () != "POST") {
+			$this->response ( '', 406 );
+		}
+		$db = new DB();
+    $data = json_decode(file_get_contents('php://input'),true);
+		$db->Update_Data2("datos", $data["name"], $data["lastname"], $data["email"], $data["age"], $data["student"], $data["id"]);
+    $this->response('',200);
+
+    //$valores2= array('$set'=>array("name"=>"Jorge", "lastname"=>"Rincon", "email"=>"lufe089@gmail.com", "age"=>25, "student"=>"true"));
+    //$valorupdate = $db->Update_Data("datos",$valores2, "5658c061e4b09df266618703");
   }
   //-------------------------->>>
 

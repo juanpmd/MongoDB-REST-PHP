@@ -44,7 +44,13 @@ class DB {
 		$query="/databases/".$this->db_name."/collections/".$collection."/".$id;
 		 $insertedValue=$this->restObj->post($query, $contentArray);
 		 return $insertedValue;
-
+	}
+	//--------------------------------------------------
+	public function Update_Data2($collection, $name, $lastname, $email, $age, $student, $id){
+		$contentArray= array('$set'=>array("name"=>$name, "lastname"=>$lastname, "email"=>$email, "age"=>$age, "student"=>$student));
+		$query="/databases/".$this->db_name."/collections/".$collection."/".$id;
+		 $insertedValue=$this->restObj->post($query, $contentArray);
+		 return $insertedValue;
 	}
 	//--------------------------------------------------
 	public function Delete_Data($collection, $id){
