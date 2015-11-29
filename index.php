@@ -72,7 +72,7 @@
           <p>Email</p>
           <input type="text" ng-model="emailform">
           <p>Age</p>
-          <input type="text" ng-model="ageform">
+          <input type="number" ng-model="ageform" id="numberinput">
           <p>Student</p>
           <!--<input type="text" ng-model="studentform">-->
           <p class="checkbox-text">Yes: </p><input ng-model="student.name" type='radio' value="true">

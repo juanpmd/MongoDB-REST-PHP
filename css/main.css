@@ -265,10 +265,6 @@ main {
 #done-update-button:hover {
   background: #b51111;
 }
-
-
-
-
 #text_note_input {
   width: 680px; height: calc(100% - 50px);
   position: absolute;
@@ -284,6 +280,11 @@ main {
   margin-bottom: 5px;
 }
 #text_note_input input[type="text"]{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; font-size: 16px;
+  width: 90%; height: 30px;
+}
+#numberinput{
   font-family: 'Roboto', sans-serif;
   font-weight: 400; font-size: 16px;
   width: 90%; height: 30px;
