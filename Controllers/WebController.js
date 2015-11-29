@@ -6,6 +6,7 @@ app.controller("WebAppController", ['$scope', '$http',
 
     $scope.results = [];
     $scope.id = "";
+    $scope.student = "";
     //----------------------------------------->>>
     $scope.getData = function(){
       $http.get('Api.php?val=allFiles').success(function(data) {
@@ -27,7 +28,7 @@ app.controller("WebAppController", ['$scope', '$http',
       $scope.lastnameform = "";
       $scope.emailform = "";
       $scope.ageform = "";
-      $scope.studentform = "";
+      //$scope.studentform = "";
     }
     //----------------------------------------->>>
     $scope.Cancel_Update_Data = function(){
@@ -38,16 +39,18 @@ app.controller("WebAppController", ['$scope', '$http',
       $scope.lastnameform = "";
       $scope.emailform = "";
       $scope.ageform = "";
-      $scope.studentform = "";
+      //$scope.studentform = "";
     }
     //----------------------------------------->>>
     $scope.Finish_Add_Data = function(){
+      //console.log($scope.student["name"]);
+
       $http.post('Api.php?val=AddFile',{
         name: $scope.nameform,
         lastname: $scope.lastnameform,
         email: $scope.emailform,
         age: $scope.ageform,
-        student: $scope.studentform
+        student: $scope.student["name"]
       }).success(function(data) {
         $("#note-edit-page").fadeOut(200).addClass("hidden");
         $scope.getData();
@@ -56,7 +59,7 @@ app.controller("WebAppController", ['$scope', '$http',
         $scope.lastnameform = "";
         $scope.emailform = "";
         $scope.ageform = "";
-        $scope.studentform = "";
+        //$scope.studentform = "";
     	}).error(function(data) {
     		console.log('Error: ' + data);
     	});
@@ -79,7 +82,7 @@ app.controller("WebAppController", ['$scope', '$http',
       $scope.lastnameform = data.lastname;
       $scope.emailform = data.email;
       $scope.ageform = data.age;
-      $scope.studentform = data.student;
+      $scope.studentform = $scope.student["name"];
       $("#note-edit-page").fadeIn(200).removeClass("hidden");
       $("#bottom-update-block").fadeIn(200).removeClass("hidden");
     }
@@ -92,12 +95,16 @@ app.controller("WebAppController", ['$scope', '$http',
         lastname: $scope.lastnameform,
         email: $scope.emailform,
         age: $scope.ageform,
-        student: $scope.studentform
+        student: $scope.student["name"]
       }).success(function(data) {
-        //console.log("siii");
         $scope.getData();
         $("#note-edit-page").fadeOut(200).addClass("hidden");
         $("#bottom-update-block").fadeOut(200).addClass("hidden");
+        $scope.mainname = "";
+        $scope.nameform = "";
+        $scope.lastnameform = "";
+        $scope.emailform = "";
+        $scope.ageform = "";
     	}).error(function(data) {
     		console.log('Error: ' + data);
     	});

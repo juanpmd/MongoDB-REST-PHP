@@ -74,7 +74,9 @@
           <p>Age</p>
           <input type="text" ng-model="ageform">
           <p>Student</p>
-          <input type="text" ng-model="studentform">
+          <!--<input type="text" ng-model="studentform">-->
+          <p class="checkbox-text">Yes: </p><input ng-model="student.name" type='radio' value="true">
+          <p class="checkbox-text">No: </p><input ng-model="student.name" type='radio' value="false">
 
         </div>
         <div id="bottom-edit-block">
